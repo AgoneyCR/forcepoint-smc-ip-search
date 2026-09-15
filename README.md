@@ -75,12 +75,11 @@ Herramienta profesional de consola y librería en Python para la **búsqueda rec
 3. Instala el paquete en modo editable:
    ```bash
    pip install --upgrade pip
-   pip install -e .
    ```
 
    Para instalar las dependencias de desarrollo y tests:
    ```bash
-   pip install -e .[dev]
+   pip install -e ".[dev]"
    ```
 
 ---
@@ -113,14 +112,14 @@ SMC_SSL_VERIFY=false
 
 ## Uso
 
-Una vez instalado, dispones del comando de consola `smc-ip-tool`:
+Una vez instalado, dispones del comando de consola dentro de /src/forcepoint_smc_ip_search `cli.py`:
 
 ### 1. Modo Interactivo (Recomendado)
 
 Ejecuta sin argumentos adicionales para abrir el menú principal:
 
 ```bash
-smc-ip-tool
+python3 cli.py
 ```
 
 Ejemplo de flujo:
@@ -147,12 +146,12 @@ Iniciando búsqueda de la IP '192.0.2.45' dentro de 'Mi_Grupo_Ejemplo'...
 
 Búsqueda directa de una IP:
 ```bash
-smc-ip-tool --search 192.0.2.45
+python3 cli.py --search 192.0.2.45
 ```
 
 Revisión directa de duplicados:
 ```bash
-smc-ip-tool --duplicates
+python3 cli.py --duplicates
 ```
 
 ### 3. Modo Depuración (`--debug` o `-v`)
@@ -160,7 +159,7 @@ smc-ip-tool --duplicates
 Para visualizar la traza completa de cada elemento, subgrupo y contenido de las listas inspeccionadas:
 
 ```bash
-smc-ip-tool --search 192.0.2.45 --debug
+python3 cli.py --search 192.0.2.45 --debug
 ```
 
 ---
