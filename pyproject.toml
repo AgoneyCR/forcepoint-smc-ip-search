@@ -1,0 +1,88 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "forcepoint-smc-ip-search"
+version = "0.1.0"
+description = "Herramienta profesional para búsqueda recursiva de IPs y detección de duplicados en Forcepoint SMC"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "AgoneyCR" }
+]
+keywords = [
+    "forcepoint",
+    "smc",
+    "stonesoft",
+    "security",
+    "networking",
+    "ip-search",
+    "firewall",
+    "ngfw"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: System Administrators",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: System :: Networking",
+    "Topic :: Security",
+]
+dependencies = [
+    # NOTA CRÍTICA: Debe ser 'fp-NGFW-SMC-python' (SDK oficial activo con soporte de
+    # la propiedad .iplist en elementos IPList), NO el paquete obsoleto 'smc-python'.
+    "fp-NGFW-SMC-python>=1.0.33",
+    "python-dotenv>=1.0.0",
+    "urllib3>=1.26.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.4.0",
+    "pre-commit>=3.0.0",
+]
+
+[project.scripts]
+smc-ip-tool = "forcepoint_smc_ip_search.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra -q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+exclude = ["legacy"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # isort
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "C4",   # flake8-comprehensions
+]
+ignore = [
+    "E501", # line-too-long manejado por formatter
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
