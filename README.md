@@ -75,12 +75,11 @@ Herramienta profesional de consola y librería en Python para la **búsqueda rec
 3. Instala el paquete en modo editable:
    ```bash
    pip install --upgrade pip
-   pip install -e .
    ```
 
    Para instalar las dependencias de desarrollo y tests:
    ```bash
-   pip install -e .[dev]
+   pip install -e ".[dev]"
    ```
 
 ---
