@@ -61,7 +61,7 @@ Herramienta profesional de consola y librería en Python para la **búsqueda rec
    cd forcepoint-smc-ip-search
    ```
 
-2. Crea y activa un entorno virtual:
+2. Crea y activa un entorno virtual (OPCIONAL):
    ```bash
    # Linux / macOS:
    python3 -m venv .venv
