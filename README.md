@@ -112,14 +112,14 @@ SMC_SSL_VERIFY=false
 
 ## Uso
 
-Una vez instalado, dispones del comando de consola dentro de /src/forcepoint_smc_ip_search `cli.py`:
+Una vez instalado, dispones del comando de consola `smc-ip-tool`:
 
 ### 1. Modo Interactivo (Recomendado)
 
 Ejecuta sin argumentos adicionales para abrir el menú principal:
 
 ```bash
-python3 cli.py
+smc-ip-tool
 ```
 
 Ejemplo de flujo:
@@ -146,12 +146,12 @@ Iniciando búsqueda de la IP '192.0.2.45' dentro de 'Mi_Grupo_Ejemplo'...
 
 Búsqueda directa de una IP:
 ```bash
-python3 cli.py --search 192.0.2.45
+smc-ip-tool --search 192.0.2.45
 ```
 
 Revisión directa de duplicados:
 ```bash
-python3 cli.py --duplicates
+smc-ip-tool --duplicates
 ```
 
 ### 3. Modo Depuración (`--debug` o `-v`)
@@ -159,7 +159,7 @@ python3 cli.py --duplicates
 Para visualizar la traza completa de cada elemento, subgrupo y contenido de las listas inspeccionadas:
 
 ```bash
-python3 cli.py --search 192.0.2.45 --debug
+smc-ip-tool --search 192.0.2.45 --debug
 ```
 
 ---
